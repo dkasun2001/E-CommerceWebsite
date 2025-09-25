@@ -1,58 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Cart | E-COMMERCE WEBSITE BY EDYODA </title>
-    <link rel="stylesheet" href="css/cart.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cart | E-COMMERCE WEBSITE BY EDYODA</title>
+    <link rel="stylesheet" href="css/cart.css" />
     <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <link
+      rel="icon"
+      href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+      type="image/gif"
+      sizes="16x16"
+    />
     <!-- header links -->
     <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/theme.css">
-
-</head>
-<body>
-        <!-- HEADER -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
     <div id="1"></div>
     <script>
-        load("header.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(1).innerHTML = req.responseText;
-        }
+      load("header.html");
+      function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById(1).innerHTML = req.responseText;
+      }
     </script>
 
-        <!-- CART CONTAINER -->
+    <!-- CART CONTAINER -->
     <div id="cartMainContainer">
-        <h1> Checkout </h1>
-        <h3 id="totalItem"> Total Items: 0 </h3>
+      <h1>Checkout</h1>
+      <h3 id="totalItem">Total Items: 0</h3>
 
-        <div id="cartContainer">
-            <!-- JS rendered code -->
-        </div>
+      <div id="cartContainer">
+        <!-- JS rendered code -->
+      </div>
+    </div>
+  </body>
+  <!-- SHOP LANE Chatbot Widget Start -->
+  <style>
+    #chic-threads-chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
 
+    #chic-threads-chat-button {
+      background-color: #ec4899; /* Pink color */
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    #chic-threads-chat-button:hover {
+      transform: scale(1.1);
+    }
+
+    #chic-threads-chat-window {
+      position: absolute;
+      bottom: 80px; /* Position above the button */
+      right: 0;
+      width: 400px;
+      height: 600px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: none; /* Hidden by default */
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    #chic-threads-chat-window.open {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #chic-threads-chat-window iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+
+  <div id="chic-threads-chat-widget">
+    <!-- The pop-up chat window -->
+    <div id="chic-threads-chat-window">
+      <!-- 
+      IMPORTANT: Replace the src below with the URL you got from Step 1.
+    -->
+      <iframe
+        src="https://dreamy-shortbread-7ada1a.netlify.app/"
+        title="Chic Threads Fashion Assistant"
+      ></iframe>
     </div>
 
-</body>
-    <!-- FOOTER -->
-    <div id="4"></div>
-    <script>
-        load("footer.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(4).innerHTML = req.responseText;
-        }
-    </script>
-<script src="/cart.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/darkMode.js"></script>
+    <!-- The floating button that opens the chat -->
+    <button
+      id="chic-threads-chat-button"
+      aria-label="Open Fashion Assistant Chat"
+    >
+      <!-- A simple chat icon SVG -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const chatButton = document.getElementById("chic-threads-chat-button");
+    const chatWindow = document.getElementById("chic-threads-chat-window");
+
+    chatButton.addEventListener("click", () => {
+      chatWindow.classList.toggle("open");
+    });
+  </script>
+  <!-- SHOP LANE Chatbot Widget End -->
+  <!-- FOOTER -->
+  <div id="4"></div>
+  <script>
+    load("footer.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(4).innerHTML = req.responseText;
+    }
+  </script>
+  <script src="/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/darkMode.js"></script>
 </html>
