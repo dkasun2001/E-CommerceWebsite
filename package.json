@@ -2,11 +2,12 @@
   "name": "project",
   "version": "1.0.0",
   "description": "A mobile responsive sample of E-Commerce Website using HTML, CSS, JavaScript and API's",
-  "main": "cart.js",
+  "main": "src/server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js",
+    "build": "echo \"Build successful\""
   },
   "keywords": [],
   "author": "",
